@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import com.google.gson.Gson;
 
+import javax.swing.*;
+
 public class Game {
     String GameName;
     String Genre;
@@ -28,13 +30,27 @@ public class Game {
 
     public static void main(String[] args) {
 
-        Game testGame = new Game("gta","roleplay","rockstar","PlayHard", "north 97",true);
+        Game testGame1 = new Game("gta","roleplay","rockstar","PlayHard", "north 97",true);
+        Game testGame2 = new Game("gta","roleplay","rockstar","PlayHard", "north 97",false);
 
         Gson gson = new Gson();
-        String json = gson.toJson(testGame);
-        System.out.println(json);
+        String json1 = gson.toJson(testGame1);
+        String json2 = gson.toJson(testGame2);
 
-        File file = new File()
+    //IMPLEMENET JASON FILE INTO DATABASE
+        try {
+            File file = new File("DataBase.json");
+            file.createNewFile();
+            FileWriter fileWriter = new FileWriter(file);
+            System.out.println("writing to file....");
+            fileWriter.write(json1);
+            fileWriter.write(",\n");
+            fileWriter.write(json2);
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
 
