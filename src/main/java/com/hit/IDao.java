@@ -1,4 +1,4 @@
-package main.java.com.hit.dao;
+package main.java.com.hit;
 
 public interface IDao <T> {
 

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../AlgorithmModule/out/artifacts/AlgorithmModule_jar/AlgorithmModule.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../gson-2.8.6-javadoc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/../gson-2.8.6-javadoc.jar!/" recursive="false" />
+  </library>
+</component>

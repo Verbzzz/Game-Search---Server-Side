@@ -1,18 +1,14 @@
-package main.java.com.hit.service;
+package main.java.com.hit;
 
-import main.java.com.hit.dao.IDao;
-import main.java.com.hit.dm.Game;
+import main.java.com.hit.IDao;
+import main.java.com.hit.Game;
 
-
-
-public class gameSearch extends Game implements IDao<Game> {
-
-    Game game = new Game();
+public class gameSearchService implements IDao<Game> {
 
     @Override
     public String getGame(String userSearch){
-        System.out.println("get started");
 
+        System.out.println("get started");
         System.out.println("get finished");
         return userSearch;
     }
