@@ -17,7 +17,7 @@ public class GameSearchService implements IDao<Game> {
         GameName,
         Genre
 
-    }
+    };
 
     public static void main(String[] args){
         GameSearchService gss = new GameSearchService();
