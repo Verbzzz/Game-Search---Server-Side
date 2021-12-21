@@ -1,7 +1,11 @@
 package main.java.com.hit;
 
 
-public class Game {
+import java.io.Serializable;
+import java.util.UUID;
+
+public class Game implements Serializable {
+    private final String uuid = UUID.randomUUID().toString();
     private String GameName;
     private String Genre;
     private String GameCompanyDevelop;
@@ -35,10 +39,23 @@ public class Game {
     public String getAddressStore() {
         return AddressStore;
     }
+    public String getUuid(){ return uuid;}
     public boolean getAvailable(){
         return Available;
     }
 
+    @Override
+    public String toString() {
+        return "Game{" +
+                "uuid='" + uuid + '\'' +
+                ", GameName='" + GameName + '\'' +
+                ", Genre='" + Genre + '\'' +
+                ", GameCompanyDevelop='" + GameCompanyDevelop + '\'' +
+                ", GameStoreName='" + GameStoreName + '\'' +
+                ", AddressStore='" + AddressStore + '\'' +
+                ", Available=" + Available +
+                '}';
+    }
 }
 
 
