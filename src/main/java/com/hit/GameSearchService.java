@@ -17,7 +17,7 @@ public class GameSearchService implements IDao<Game> {
         GameName,
         Genre
 
-    };
+    }
 
     public static void main(String[] args){
         GameSearchService gss = new GameSearchService();
@@ -66,6 +66,7 @@ public class GameSearchService implements IDao<Game> {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+//
         System.out.println("get finished");
     }
 
