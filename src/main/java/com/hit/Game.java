@@ -39,6 +39,7 @@ public class Game implements Serializable {
     public String getAddressStore() {
         return AddressStore;
     }
+    public String getUuid(){ return uuid;}
     public boolean getAvailable(){
         return Available;
     }
@@ -66,6 +67,18 @@ public class Game implements Serializable {
                 '}';
     }
 
+    @Override
+    public String toString() {
+        return "Game{" +
+                "uuid='" + uuid + '\'' +
+                ", GameName='" + GameName + '\'' +
+                ", Genre='" + Genre + '\'' +
+                ", GameCompanyDevelop='" + GameCompanyDevelop + '\'' +
+                ", GameStoreName='" + GameStoreName + '\'' +
+                ", AddressStore='" + AddressStore + '\'' +
+                ", Available=" + Available +
+                '}';
+    }
 }
 
 
