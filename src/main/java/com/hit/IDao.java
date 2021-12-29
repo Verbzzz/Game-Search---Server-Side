@@ -2,8 +2,10 @@ package main.java.com.hit;
 
 public interface IDao <T> {
 
-    String getGame(String userSearch);
+    static String getGame(String searchKey,String userSearch) {
+        return null;
+    }
     void saveGame(T t);
-    void updateGame(T t, String[] params);
+    public void updateGame(String gameName, GameSearchService.GameKey key, String updateVal);
     void deleteGame(T t);
 }
