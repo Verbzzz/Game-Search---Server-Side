@@ -3,9 +3,7 @@ package main.java.com.hit.tests;
 import main.java.com.hit.dao.GameDaoImpl;
 import main.java.com.hit.dm.Game;
 import org.junit.Test;
-
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class GameServiceTest {

@@ -26,5 +26,4 @@ public class GameService {
     public void deleteGame(String gameName){
         gameDao.deleteGame(gameName);
     }
-
 }

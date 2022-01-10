@@ -1,6 +1,5 @@
 package main.java.com.hit.dm;
 
-
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -12,9 +11,6 @@ public class Game implements Serializable {
     private String GameStoreName;
     private String AddressStore;
 
-
-    //methods
-
     public Game(String gameName, String genre, String gameCompanyDevelop, String gameStoreName, String addressStore) {
         this.GameName = gameName;
         this.Genre = genre;
@@ -23,7 +19,6 @@ public class Game implements Serializable {
         this.AddressStore = addressStore;
 
     }
-
 
     public String getGameName() {
         return GameName;
@@ -49,7 +44,6 @@ public class Game implements Serializable {
         return uuid;
     }
 
-
     public void setGameName(String Name) {
         this.GameName = Name;
     }
@@ -70,7 +64,6 @@ public class Game implements Serializable {
         this.AddressStore = AddressStore;
     }
 
-
     @Override
     public String toString() {
         return "Game{" +
@@ -83,7 +76,6 @@ public class Game implements Serializable {
                 '}';
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -91,9 +83,9 @@ public class Game implements Serializable {
         Game other = (Game) obj;
         return GameName.equals(other.GameName) &&
                 Genre.equals(other.Genre) &&
-                    GameCompanyDevelop.equals(other.GameCompanyDevelop) &&
-                        GameStoreName.equals(other.GameStoreName) &&
-                            AddressStore.equals(other.AddressStore);
+                GameCompanyDevelop.equals(other.GameCompanyDevelop) &&
+                GameStoreName.equals(other.GameStoreName) &&
+                AddressStore.equals(other.AddressStore);
     }
 }
 

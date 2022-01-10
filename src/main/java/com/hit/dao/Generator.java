@@ -53,7 +53,6 @@ public class Generator {
         }
     }
 
-    //IMPLEMENET JASON FILE INTO DATABASE
     public void jsonBuilder(Game newGame) {
         final String id = newGame.getUuid();
 
