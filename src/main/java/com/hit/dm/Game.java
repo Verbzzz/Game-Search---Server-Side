@@ -83,18 +83,18 @@ public class Game implements Serializable {
                 '}';
     }
 
-//
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) return true;
-//        if (obj == null || getClass() != obj.getClass()) return false;
-//        Game other = (Game) obj;
-//        return GameName.equals(other.GameName) &&
-//                Genre.equals(other.Genre) &&
-//                    GameCompanyDevelop.equals(other.GameCompanyDevelop) &&
-//                        GameStoreName.equals(other.GameStoreName) &&
-//                            AddressStore.equals(other.AddressStore);
-//    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Game other = (Game) obj;
+        return GameName.equals(other.GameName) &&
+                Genre.equals(other.Genre) &&
+                    GameCompanyDevelop.equals(other.GameCompanyDevelop) &&
+                        GameStoreName.equals(other.GameStoreName) &&
+                            AddressStore.equals(other.AddressStore);
+    }
 }
 
 
