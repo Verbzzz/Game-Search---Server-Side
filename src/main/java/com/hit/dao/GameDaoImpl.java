@@ -25,16 +25,16 @@ public class GameDaoImpl implements IDao<Game> {
     }
 
 
-    private String enumMapper(GameKey key, Game game){
-        switch (key){
-            case GameName: return game.getGameName();
-            case Genre:return game.getGenre();
-            case GameCompanyDevelop:return game.getGameCompanyDevelop();
-            case GameStoreName:return game.getGameStoreName();
-            case AddressStore:return game.getAddressStore();
-            default:return null;
-        }
-    }
+//    private String enumMapper(GameKey key, Game game){
+//        switch (key){
+//            case GameName: return game.getGameName();
+//            case Genre:return game.getGenre();
+//            case GameCompanyDevelop:return game.getGameCompanyDevelop();
+//            case GameStoreName:return game.getGameStoreName();
+//            case AddressStore:return game.getAddressStore();
+//            default:return null;
+//        }
+//    }
 
 
     @Override

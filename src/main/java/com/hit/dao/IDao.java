@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface IDao <T> {
 
-    public List<Game> getGame(String searchVal);
+    List<Game> getGame(String searchVal);
     void saveGame(T t);
-    public void updateGame(String gameName, GameDaoImpl.GameKey key, String updateVal);
-    public void deleteGame(String gameName);
+    void updateGame(String gameName, GameDaoImpl.GameKey key, String updateVal);
+    void deleteGame(String gameName);
 }
