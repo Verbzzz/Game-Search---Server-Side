@@ -27,7 +27,7 @@ public class Generator {
         }
     }
 
-    public void createJson(Game newGame){
+    public void createJson(Game newGame) {
         final String id = newGame.getUuid();
 
         final String filename = id + ".json";
@@ -42,7 +42,7 @@ public class Generator {
         }
     }
 
-    public void updateJson(Game newGame){
+    public void updateJson(Game newGame) {
         final String id = newGame.getUuid();
 
         final String filename = id + ".json";
@@ -57,7 +57,7 @@ public class Generator {
     public void jsonBuilder(Game newGame) {
         final String id = newGame.getUuid();
 
-        try(Reader reader = Files.newBufferedReader(Paths.get(id +".json"))) {
+        try (Reader reader = Files.newBufferedReader(Paths.get(id + ".json"))) {
             updateJson(newGame);
         } catch (Exception ex) {
             createJson(newGame);
