@@ -24,10 +24,10 @@ public class DataBaseInitialization {
         Game game4 = new Game("Lego Star Wars", "Adventure", "TT Fusion", "PlayHard", "north 97");
         generator.jsonBuilder(game4);
 
-        Game game5 = new Game(" Kung Fu Panda", "Platform", "Beenox", "PlayHard", "north 97");
+        Game game5 = new Game("Kung Fu Panda", "Platform", "Beenox", "PlayHard", "north 97");
         generator.jsonBuilder(game5);
 
-        Game game6 = new Game(" Spider-Man 3", "Platform", "rockstar", "PlayHard", "north 97");
+        Game game6 = new Game("Spider-Man 3", "Platform", "rockstar", "PlayHard", "north 97");
         generator.jsonBuilder(game6);
 
         Game game7 = new Game("Crazy Taxi", "Racing", "Hitmaker", "PlayHard", "north 97");
