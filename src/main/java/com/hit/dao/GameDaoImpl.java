@@ -3,6 +3,8 @@ package main.java.com.hit.dao;
 import com.google.gson.Gson;
 import main.java.com.hit.algo.KMP;
 import main.java.com.hit.dm.Game;
+import main.java.com.hit.service.GameService; //////////////////////////
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,6 +19,17 @@ public class GameDaoImpl implements IDao<Game> {
         GameCompanyDevelop,
         GameStoreName,
         AddressStore,
+    }
+
+    public static void main(String[] args) {
+        String GameName = "HEN_STORE";
+        String Val = "GTA";
+        String toUpdate = "GameName";
+        GameService service = new GameService();
+
+        GameDaoImpl.GameKey gameKey = Enum.valueOf(GameDaoImpl.GameKey.class, toUpdate);
+
+        service.updateGame(GameName,gameKey,Val);
     }
 
 

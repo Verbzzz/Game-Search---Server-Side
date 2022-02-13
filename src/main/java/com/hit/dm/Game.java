@@ -19,6 +19,7 @@ public class Game implements Serializable {
         this.AddressStore = addressStore;
 
     }
+    public Game(){}
 
     public String getGameName() {
         return GameName;
