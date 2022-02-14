@@ -2,6 +2,9 @@ package main.java.com.hit.server;
 
 
 
+import main.java.com.hit.dm.Game;
+
+import java.util.List;
 import java.util.Map;
 
 public class Request {
@@ -14,7 +17,7 @@ public class Request {
         this.body = body;
     }
 
-    public Request() {
+    public Request(List<Game> games) {
 
     }
 

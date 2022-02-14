@@ -21,21 +21,11 @@ public class GameDaoImpl implements IDao<Game> {
         AddressStore,
     }
 
-    public static void main(String[] args) {
-        String GameName = "HEN_STORE";
-        String Val = "GTA";
-        String toUpdate = "GameName";
-        GameService service = new GameService();
-
-        GameDaoImpl.GameKey gameKey = Enum.valueOf(GameDaoImpl.GameKey.class, toUpdate);
-
-        service.updateGame(GameName,gameKey,Val);
-    }
+    public String path = "src/main/java/com/hit/resource/";
 
 
     @Override
     public List<Game> getGame(String searchVal){
-
         Generator generator = new Generator();
         List<Game> gameList=new ArrayList<>();
 
@@ -45,7 +35,7 @@ public class GameDaoImpl implements IDao<Game> {
         try {
             for(String id: generator.idSet) {
                 Gson gson = new Gson();
-                Reader reader = Files.newBufferedReader(Paths.get(id + ".json"));
+                Reader reader = Files.newBufferedReader(Paths.get(path + id + ".json"));
 
                 Game game = gson.fromJson(reader, Game.class);
                 Text = game.toString();
@@ -76,7 +66,7 @@ public class GameDaoImpl implements IDao<Game> {
         try {
             for(String id: generator.idSet) {
                 Gson gson = new Gson();
-                Reader reader = Files.newBufferedReader(Paths.get(id + ".json"));
+                Reader reader = Files.newBufferedReader(Paths.get(path + id + ".json"));
                 Game game = gson.fromJson(reader, Game.class);
 
                 String name = game.getGameName();
@@ -108,20 +98,19 @@ public class GameDaoImpl implements IDao<Game> {
     public void deleteGame(String gameName) {
 
         Generator generator = new Generator();
-
         try {
             for(String id: generator.idSet) {
                 Gson gson = new Gson();
-                Reader reader = Files.newBufferedReader(Paths.get(id + ".json"));
+                Reader reader = Files.newBufferedReader(Paths.get(path + id + ".json"));
                 Game game = gson.fromJson(reader, Game.class);
 
                 String name = game.getGameName();
 
                 if (name != null && name.equals(gameName)) {
                     try {
-                        Files.delete(Paths.get(id + ".json"));
+                        Files.delete(Paths.get(path + id + ".json"));
                         generator.idSet.remove(game.getUuid());
-                        try (FileWriter fileWriter1 = new FileWriter("UUID.json")) {
+                        try (FileWriter fileWriter1 = new FileWriter(path + "UUID.json")) {
                             new Gson().toJson(generator.idSet, fileWriter1);
                         }
                     } catch (IOException e){
