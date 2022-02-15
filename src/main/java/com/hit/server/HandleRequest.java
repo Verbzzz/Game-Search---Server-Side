@@ -11,7 +11,6 @@ import main.java.com.hit.service.GameService;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.net.Socket;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class HandleRequest implements Runnable {
@@ -79,7 +78,7 @@ public class HandleRequest implements Runnable {
             if(response != null) {
                 writer.println(gson.toJson(response));
                 writer.flush();
-                System.out.println(gson.toJson(response));
+                //System.out.println(gson.toJson(response));
             }
             writer.close();
             reader.close();

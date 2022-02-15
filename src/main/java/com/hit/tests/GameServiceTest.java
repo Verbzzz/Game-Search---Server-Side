@@ -10,14 +10,6 @@ public class GameServiceTest {
 
     GameDaoImpl gameDao = new GameDaoImpl();
 
-    @Test
-    public void getGameTest() {
-        Game game1 = new Game("GTA", "Roleplay", "Rockstar", "PlayHard", "north 97");
-        List<Game> GameList = gameDao.getGame("Gta");
-
-        for (Game game : GameList)
-            assertEquals(game1, game);
-    }
 
     @Test
     public void saveGameTest() {
@@ -28,6 +20,14 @@ public class GameServiceTest {
 
         for (Game game : GameList)
             assertEquals(game1, game);
+    }
+
+    @Test
+    public void getGameTest() {
+        Game game1 = new Game("test", "test", "test", "test", "test");
+        List<Game> GameList = gameDao.getGame("test");
+        for (Game game : GameList)
+            assertEquals(game1.getGameName(), game.getGameName());
     }
 
     @Test

@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class Generator {
 
     private final static String INDEX_JSON = "UUID.json";
@@ -54,14 +55,14 @@ public class Generator {
         }
     }
 
-    public void jsonBuilder(Game newGame) {
-        final String id = newGame.getUuid();
 
-        try (Reader reader = Files.newBufferedReader(Paths.get(path + id + ".json"))) {
+    public void jsonBuilder(Game newGame){
+        final String id = newGame.getUuid();
+        if(Files.exists(Paths.get(path + id + ".json"))){
             updateJson(newGame);
-        } catch (Exception ex) {
+        }
+        else{
             createJson(newGame);
-            ex.printStackTrace();
         }
     }
 }

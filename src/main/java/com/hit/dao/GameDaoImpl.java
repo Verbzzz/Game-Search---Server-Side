@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class GameDaoImpl implements IDao<Game> {
 
@@ -69,9 +70,9 @@ public class GameDaoImpl implements IDao<Game> {
                 Reader reader = Files.newBufferedReader(Paths.get(path + id + ".json"));
                 Game game = gson.fromJson(reader, Game.class);
 
-                String name = game.getGameName();
+                String name = game.getGameName().toLowerCase();
 
-                if (name != null && name.equals(gameName)){
+                if (name != null && name.equals(gameName.toLowerCase())){
                     switch (key){
                         case GameName: game.setGameName(updateVal);
                         break;
