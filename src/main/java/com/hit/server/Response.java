@@ -1,16 +1,8 @@
 package main.java.com.hit.server;
 
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import main.java.com.hit.dm.Game;
-
-import java.io.PrintWriter;
-import java.lang.reflect.Type;
-import java.net.Socket;
 import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+
 
 public class Response {
     public String json;

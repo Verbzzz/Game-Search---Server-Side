@@ -7,7 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import main.java.com.hit.controller.GameController;
 import main.java.com.hit.dao.GameDaoImpl;
 import main.java.com.hit.dm.Game;
-import main.java.com.hit.service.GameService;
+
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -19,7 +19,6 @@ public class HandleRequest implements Runnable {
     Scanner reader;
     PrintWriter writer;
     Gson gson = new GsonBuilder().create();
-    //GameService service = new GameService();
     GameController controller = new GameController();
 
 
@@ -81,7 +80,6 @@ public class HandleRequest implements Runnable {
             if(response != null) {
                 writer.println(gson.toJson(response));
                 writer.flush();
-                //System.out.println(gson.toJson(response));
             }
             writer.close();
             reader.close();
