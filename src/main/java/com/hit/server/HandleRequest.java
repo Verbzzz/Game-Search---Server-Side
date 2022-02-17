@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import com.google.gson.reflect.TypeToken;
+import main.java.com.hit.controller.GameController;
 import main.java.com.hit.dao.GameDaoImpl;
 import main.java.com.hit.dm.Game;
 import main.java.com.hit.service.GameService;
@@ -18,7 +19,9 @@ public class HandleRequest implements Runnable {
     Scanner reader;
     PrintWriter writer;
     Gson gson = new GsonBuilder().create();
-    GameService service = new GameService();
+    //GameService service = new GameService();
+    GameController controller = new GameController();
+
 
     public HandleRequest(Socket client) throws IOException{
         socket = client;
@@ -38,7 +41,7 @@ public class HandleRequest implements Runnable {
 
             switch (command){
                 case "Get":{
-                    response = new Response(service.searchGame(request.getBody()));
+                    response = new Response(controller.searchGame(request.getBody()));
                     break;
                 }
                 case "Save":{
@@ -50,7 +53,7 @@ public class HandleRequest implements Runnable {
                     newGame.setGameStoreName(request.getHeaders().get("GameStoreName"));
                     newGame.setAddressStore(request.getHeaders().get("AddressStore"));
 
-                    service.saveGame(newGame);
+                    controller.saveGame(newGame);
                     response = new Response("1");
 
                     break;
@@ -63,14 +66,14 @@ public class HandleRequest implements Runnable {
 
                     GameDaoImpl.GameKey gameKey = Enum.valueOf(GameDaoImpl.GameKey.class, update);
 
-                    service.updateGame(name,gameKey,val);
+                    controller.updateGame(name,gameKey,val);
 
                     response = new Response("1");
                     break;
                 }
                 case "Delete":{
                     String GameName = request.getBody();
-                    service.deleteGame(GameName);
+                    controller.deleteGame(GameName);
                     response = new Response("1");
                     break;
                 }

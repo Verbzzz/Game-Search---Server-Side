@@ -20,7 +20,6 @@ public class Server {
         while (serverUp) {
             try {
                 client = server.accept();
-                System.out.println("Client connected :) ");
                 new Thread(new HandleRequest(client)).start();
             } catch (IOException e) {
                 System.out.println("tiered of waiting for connection :( ");
